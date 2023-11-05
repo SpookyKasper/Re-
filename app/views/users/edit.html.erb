@@ -1,0 +1,33 @@
+<h1>Users#edit</h1>
+<p>Find me in app/views/users/edit.html.erb</p>
+
+<%# <%= form_tag('/users') do %> %>
+  <%# <%= label_tag 'username', 'Username' %> %>
+  <%# <%= text_field_tag 'username' %> %>
+  <%# <%= label_tag 'email', 'Email' %> %>
+  <%# <%= email_field_tag 'email' %> %>
+  <%# <%= label_tag 'password', 'Password' %> %>
+  <%# <%= password_field_tag 'password' %> %>
+  <%# <%= submit_tag 'Submit' %> %>
+<%# <% end %> %>
+
+<%# <form action="/users" method="create" accept-charset="UTF-8"> %>
+  <%# <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token"> %> %>
+  <%# <label for="username">Username</label> %>
+  <%# <input type="text" name="user[username]" id="username"> %>
+  <%# <label for="email">Email</label> %>
+  <%# <input type="email" name="user[email]" id="email"> %>
+  <%# <label for="password">Password</label> %>
+  <%# <input type="password" name="user[password]" id="password"> %>
+  <%# <input type="submit" value="Submit"> %>
+<%# </form> %>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :username, 'Your cool username' %>
+  <%= form.text_field :username, placeholder: 'cool-name' %>
+  <%= form.label :email, 'Email', value: 'mymail@gmail.com' %>
+  <%= form.email_field :email, placeholder: 'abc@exemple.com' %>
+  <%= form.label :password, 'Passowrd' %>
+  <%= form.password_field :password%>
+  <%= form.submit 'Submit' %>
+<% end %>
